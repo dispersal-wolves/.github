@@ -1,0 +1,13 @@
+{
+  "name": "Dispersal Wolves",
+  "tagline": "Security tools that travel light.",
+  "mark": "Trail Wolf",
+  "palette": {
+    "forest": "#0D292D",
+    "darkTeal": "#17464B",
+    "teal": "#397A7E",
+    "iceTeal": "#82B9B8",
+    "mist": "#D9E9E6",
+    "snow": "#F3F6F2"
+  }
+}

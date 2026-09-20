@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Dispersal Wolves</title>
+  <desc id="desc">Security tools that travel light</desc>
+  <rect width="1280" height="640" fill="#0D292D"/>
+  <g fill="none" stroke="#17464B" stroke-width="3" opacity=".92">
+    <path d="M-80 112C120 1 289 175 493 77S850 38 1025 118s281 53 390-26"/>
+    <path d="M-65 178c204-104 376 54 574-18s350-76 535-5 264 45 379-11"/>
+    <path d="M-55 491c182-65 341 26 519-28s355-47 531 8 275 34 410-14"/>
+    <path d="M-45 548c191-57 350 14 527-30s352-33 537 12 260 26 400-19"/>
+  </g>
+  <g transform="translate(82 110) scale(1.64)">
+    <path fill="#82B9B8" fill-rule="evenodd" d="M18 18 79 52l49-34 49 34 61-34-22 91 22 38-45 91-65-29-65 29-45-91 22-38Zm53 65 29 31 28 51 28-51 29-31-18 80-39 31-39-31Z"/>
+  </g>
+  <text x="545" y="275" fill="#F3F6F2" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="800" letter-spacing="-4">Dispersal Wolves</text>
+  <text x="551" y="343" fill="#82B9B8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="6">SECURITY TOOLS THAT TRAVEL LIGHT</text>
+  <path d="M551 397h584" stroke="#397A7E" stroke-width="4"/>
+</svg>
