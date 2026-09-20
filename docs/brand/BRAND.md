@@ -1,30 +1,57 @@
 # Dispersal Wolves identity
 
-## Trail Wolf
+## Walking Wolf
 
-The mark is an angular wolf organized around a negative-space `W`. It should feel like a trail sign seen at distance: recognizable, flat, and free of mascot detail.
+The primary mark is a side-profile wolf walking with its head held low. Its long back, separated legs and low tail remain recognizable without turning the animal into a mascot.
 
-Use `mark.svg` on snow or pale mist. Use `mark-reversed.svg` on forest and dark teal. `mark-monochrome.svg` is reserved for single-ink applications.
+The silhouette began as original high-resolution raster artwork. `wolf-source.png` preserves that source. `mark.svg` is the cleaned vector trace used by websites, banners and documents.
 
-Do not add eyes, teeth, shadows, outlines, gradients, warm accent colors, or effects that turn the mark into a character.
+Use `mark.svg` on light fields. Use `mark-reversed.svg` on black fir and pitch pine. `mark-monochrome.svg` is reserved for single-ink applications.
+
+Do not add eyes, teeth, shadows, outlines, gradients, glowing effects or decorative symbols. Do not place the mark inside a badge or shield.
 
 ## Palette
 
 | Token | Hex | Use |
 |---|---|---|
-| Forest | `#0D292D` | Primary dark field |
-| Dark teal | `#17464B` | Topography and secondary fields |
-| Teal | `#397A7E` | Primary mark and links |
-| Ice teal | `#82B9B8` | Highlights and active states |
-| Mist | `#D9E9E6` | Pale panels and reversed marks |
-| Snow | `#F3F6F2` | Primary light field and dark-field text |
+| Black fir | `#071310` | Primary dark field |
+| Pitch pine | `#10231F` | Secondary dark field |
+| Lichen | `#41645D` | Rules, secondary text and navigation |
+| Cold fog | `#9CAAA6` | Reversed marks and quiet highlights |
+| Bone | `#E8E8DF` | Primary light field and dark-field text |
+| Paper | `#D4D8D0` | Secondary light field |
 
-The identity has no warm accent color.
+The identity does not use warm accent colors.
 
-## Clear space
+## Typography
 
-Keep clear space equal to one quarter of the mark's width. At sizes below 24 pixels, use the icon alone without text.
+Display headings use an old-style serif stack: Iowan Old Style, Palatino, then Georgia. Technical labels and body copy use Arial Narrow, Helvetica Neue, then Arial.
+
+The serif carries atmosphere. The sans-serif carries measurements, navigation, metadata and operational explanations.
+
+## Photography
+
+Use overcast forests, old trees, fog, wet ground, distance and empty terrain. Shadows remain green-black and highlights remain mineral gray.
+
+Avoid neon interfaces, hooded figures, glowing code, padlocks and generic cybersecurity imagery.
+
+## Clear space and minimum size
+
+Keep clear space equal to one quarter of the mark’s height. Use the full silhouette at 24 pixels wide or larger. Below that size, use the wordmark without the animal.
 
 ## Voice
 
-Write plainly. Prefer concrete verbs and short explanations. Avoid military theater, fear language, promises of perfect security, and claims that a clean report proves a system is safe.
+State the subject, action and result. Use complete sentences for explanations. Document limits wherever a security claim appears.
+
+Avoid slogan fragments, false oppositions, unnecessary negations, “built to” introductions and promises of complete security.
+
+## Files
+
+- `mark.svg`: primary scalable mark
+- `mark-reversed.svg`: mark for dark surfaces
+- `mark-monochrome.svg`: black single-ink mark
+- `wolf-source.png`: selected generated raster source
+- `avatar.svg` and `avatar-1024.png`: organization avatar
+- `wordmark.svg`: mark and organization name
+- `social-preview.svg` and `social-preview-1280x640.png`: social preview
+- `favicon.svg`: square favicon treatment
