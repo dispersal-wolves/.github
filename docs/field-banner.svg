@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 500" role="img" aria-labelledby="title desc">
+  <title id="title">Dispersal Wolves</title>
+  <desc id="desc">An abstract wolf crossing a winter field drawn in deep forest teal and snow</desc>
+  <rect width="1400" height="500" fill="#102F31"/>
+  <g fill="none" stroke="#315659" stroke-width="2">
+    <path d="M-50 80c180-95 350 70 535-15s360-40 520 30 290 30 455-65"/>
+    <path d="M-60 137c190-84 335 40 510-10s335-35 510 21 318 25 505-53"/>
+    <path d="M-40 390c170-62 330 20 490-35s340-30 505 22 320 18 500-40"/>
+    <path d="M-20 440c175-52 325 15 490-27s330-28 500 13 300 19 470-29"/>
+  </g>
+  <g transform="translate(95 78) scale(1.28)" fill="none" stroke="#D8E6DF" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M22 170 55 76l53 34 45-70 51 74 61-31 24 87-62 74-128-4z"/>
+    <path d="m108 110 18 47 47 4 31-47M126 157l-27 83m74-79 54 83"/>
+    <path d="m55 76-30-31 4 71m175-2 39-73 22 42" stroke="#D58A58"/>
+  </g>
+  <text x="520" y="215" fill="#F1F0E8" font-family="Arial, Helvetica, sans-serif" font-size="91" font-weight="700" letter-spacing="-3">Dispersal Wolves</text>
+  <text x="527" y="282" fill="#D8E6DF" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="7">SECURITY TOOLS THAT TRAVEL LIGHT</text>
+  <path d="M527 332h710" stroke="#D58A58" stroke-width="3"/>
+</svg>
