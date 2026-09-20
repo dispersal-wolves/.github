@@ -1,28 +1,29 @@
 <p align="center">
-  <img src="../docs/field-banner.svg" alt="Dispersal Wolves — security tools that travel light" width="100%">
+  <img src="../docs/field-banner.svg" alt="Dispersal Wolves — defensive utilities for Linux hosts" width="100%">
 </p>
 
-Dispersal Wolves builds small defensive tools for machines in the wild. Every utility runs locally, keeps a narrow contract, and leaves its decisions visible.
+Dispersal Wolves maintains ten defensive utilities for Linux hosts. The tools inspect system state, record changes and prepare reviewable configuration without requiring a shared control plane.
 
-## The field kit
+## Repository index
 
-| Observe | Guard | Carry |
-|---|---|---|
-| [**Host Check**](https://github.com/dispersal-wolves/host-check) reads the security posture of one machine. | [**SSH Guard**](https://github.com/dispersal-wolves/ssh-guard) reviews and hardens OpenSSH policy. | [**Safe Share**](https://github.com/dispersal-wolves/safe-share) opens a temporary, limited route to a file. |
-| [**Open Ports**](https://github.com/dispersal-wolves/open-ports) records what is listening and what changed. | [**Honeyfile**](https://github.com/dispersal-wolves/honeyfile) watches files that should stay untouched. | [**Firewall Kit**](https://github.com/dispersal-wolves/firewall-kit) renders policies you can read before loading. |
-| [**File Watch**](https://github.com/dispersal-wolves/file-watch) keeps SHA-256 integrity baselines. | [**Secret Sweep**](https://github.com/dispersal-wolves/secret-sweep) catches credentials before they travel. | [**Log Howl**](https://github.com/dispersal-wolves/log-howl) turns meaningful log lines into restrained alerts. |
-| [**Container Check**](https://github.com/dispersal-wolves/container-check) reviews Compose definitions for host exposure. |  |  |
+| Repository | Purpose |
+|---|---|
+| [**Host Check**](https://github.com/dispersal-wolves/host-check) | Reports host posture, services and firewall state. |
+| [**Open Ports**](https://github.com/dispersal-wolves/open-ports) | Records listening ports and reports what changed. |
+| [**SSH Guard**](https://github.com/dispersal-wolves/ssh-guard) | Reviews OpenSSH configuration and prepares policy changes. |
+| [**Honeyfile**](https://github.com/dispersal-wolves/honeyfile) | Records access to files that should remain untouched. |
+| [**File Watch**](https://github.com/dispersal-wolves/file-watch) | Maintains a local SHA-256 integrity baseline. |
+| [**Secret Sweep**](https://github.com/dispersal-wolves/secret-sweep) | Scans local files and staged changes for credentials. |
+| [**Container Check**](https://github.com/dispersal-wolves/container-check) | Reviews Compose files for host exposure. |
+| [**Firewall Kit**](https://github.com/dispersal-wolves/firewall-kit) | Renders firewall rules for review before installation. |
+| [**Log Howl**](https://github.com/dispersal-wolves/log-howl) | Matches meaningful log events and sends notifications. |
+| [**Safe Share**](https://github.com/dispersal-wolves/safe-share) | Opens a temporary route to one selected file. |
 
-## Field rules
+## Operational boundaries
 
-**Local first.** Host data stays where it was found unless you explicitly configure a destination.
+- Reports stay on the host unless an output destination is configured.
+- Inspection commands are read-only. Apply commands are separate and produce reviewable output.
+- A clean report means the documented checks passed. It does not establish that a machine is uncompromised.
+- Each repository documents its threat model, security policy, command-line interface and machine-readable output.
 
-**Safe by default.** Inspection is read-only. Changes require a deliberate command and remain reviewable.
-
-**Small contracts.** Each repository solves one defensive job instead of becoming a security platform.
-
-**Honest limits.** A clean report is evidence, not proof that a machine is uncompromised.
-
----
-
-Every repository carries its threat model, security policy, automated checks, and machine-readable output where it helps. Visit the website or open any tool to begin from its README.
+The software is MIT licensed. Installation and usage instructions live in each repository.
