@@ -9,6 +9,10 @@ const root = path.resolve(here, '..');
 const output = path.join(root, 'docs', 'banners');
 const apply = process.argv.includes('--apply');
 
+// Font stacks from docs/brand/BRAND.md.
+const serif = `'Iowan Old Style', Palatino, Georgia, serif`;
+const sans = `'Arial Narrow', 'Helvetica Neue', Arial, sans-serif`;
+
 const services = [
   ['host-check', 'Host Check', 'Reports host posture, services and firewall state.'],
   ['open-ports', 'Open Ports', 'Records listening ports and reports what changed.'],
@@ -54,9 +58,9 @@ function banner(title, line) {
   ${forest(1200, 360)}
   <g transform="translate(62 124) scale(.185)" fill="#9CAAA6"><path fill-rule="evenodd" d="${markPath}"/></g>
   <path d="M400 84H1124" stroke="#41645D" stroke-width="2"/>
-  <text x="400" y="164" fill="#E8E8DF" font-family="Georgia, 'Times New Roman', serif" font-size="68" letter-spacing="-1">${safeTitle}</text>
-  <text x="404" y="213" fill="#9CAAA6" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-size="19" letter-spacing=".7">${safeLine}</text>
-  <text x="404" y="296" fill="#41645D" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="4">DISPERSAL WOLVES / DEFENSIVE UTILITIES FOR LINUX HOSTS</text>
+  <text x="400" y="164" fill="#E8E8DF" font-family="${serif}" font-size="68" letter-spacing="-1">${safeTitle}</text>
+  <text x="404" y="213" fill="#9CAAA6" font-family="${sans}" font-size="19" letter-spacing=".7">${safeLine}</text>
+  <text x="404" y="296" fill="#41645D" font-family="${sans}" font-size="13" letter-spacing="4">DISPERSAL WOLVES / DEFENSIVE UTILITIES FOR LINUX HOSTS</text>
 </svg>\n`;
 }
 
@@ -67,10 +71,10 @@ function fieldBanner() {
   <rect width="1400" height="500" fill="#071310"/>
   ${forest(1400, 500)}
   <path d="M85 86H1315" stroke="#41645D" stroke-width="2"/>
-  <text x="85" y="178" fill="#E8E8DF" font-family="Georgia, 'Times New Roman', serif" font-size="82" letter-spacing="-1">Dispersal Wolves</text>
-  <text x="90" y="231" fill="#9CAAA6" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-size="20" letter-spacing="1">Defensive utilities for Linux hosts.</text>
+  <text x="85" y="178" fill="#E8E8DF" font-family="${serif}" font-size="82" letter-spacing="-1">Dispersal Wolves</text>
+  <text x="90" y="231" fill="#9CAAA6" font-family="${sans}" font-size="20" letter-spacing="1">Defensive utilities for Linux hosts.</text>
   <g transform="translate(850 264) scale(.29)" fill="#9CAAA6"><path fill-rule="evenodd" d="${markPath}"/></g>
-  <text x="90" y="424" fill="#41645D" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-size="13" letter-spacing="4">TEN REPOSITORIES / LOCAL REPORTS / REVIEWABLE CHANGES</text>
+  <text x="90" y="424" fill="#41645D" font-family="${sans}" font-size="13" letter-spacing="4">TEN REPOSITORIES / LOCAL REPORTS / REVIEWABLE CHANGES</text>
 </svg>\n`;
 }
 

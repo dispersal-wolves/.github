@@ -14,6 +14,10 @@ LICHEN = "#41645D"
 FOG = "#9CAAA6"
 BONE = "#E8E8DF"
 
+# Font stacks from docs/brand/BRAND.md.
+SERIF_STACK = "'Iowan Old Style', Palatino, Georgia, serif"
+SANS_STACK = "'Arial Narrow', 'Helvetica Neue', Arial, sans-serif"
+
 
 def contour_path(contour: np.ndarray, origin_x: int, origin_y: int, pad: int) -> str:
     points = contour.reshape(-1, 2)
@@ -133,8 +137,8 @@ def main() -> None:
     wordmark_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" role="img" aria-labelledby="title">
   <title id="title">Dispersal Wolves</title>
   <path transform="translate(40 {wordmark_y:.2f}) scale({wordmark_scale:.6f})" fill="{FIR}" fill-rule="evenodd" d="{path_data}"/>
-  <text x="700" y="190" fill="{FIR}" font-family="Georgia, 'Times New Roman', serif" font-size="120">Dispersal</text>
-  <text x="700" y="320" fill="{FIR}" font-family="Georgia, 'Times New Roman', serif" font-size="120">Wolves</text>
+  <text x="700" y="190" fill="{FIR}" font-family="{SERIF_STACK}" font-size="120">Dispersal</text>
+  <text x="700" y="320" fill="{FIR}" font-family="{SERIF_STACK}" font-size="120">Wolves</text>
 </svg>
 '''
     (args.output / "wordmark.svg").write_text(wordmark_svg, encoding="utf-8")
@@ -147,9 +151,9 @@ def main() -> None:
   <rect width="1280" height="640" fill="{FIR}"/>
   <rect width="16" height="640" fill="{LICHEN}"/>
   <path transform="translate(64 {social_y:.2f}) scale({social_scale:.6f})" fill="{FOG}" fill-rule="evenodd" d="{path_data}"/>
-  <text x="570" y="258" fill="{BONE}" font-family="Georgia, 'Times New Roman', serif" font-size="76">Dispersal</text>
-  <text x="570" y="344" fill="{BONE}" font-family="Georgia, 'Times New Roman', serif" font-size="76">Wolves</text>
-  <text x="576" y="412" fill="{FOG}" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="2">DEFENSIVE UTILITIES FOR LINUX HOSTS</text>
+  <text x="570" y="258" fill="{BONE}" font-family="{SERIF_STACK}" font-size="76">Dispersal</text>
+  <text x="570" y="344" fill="{BONE}" font-family="{SERIF_STACK}" font-size="76">Wolves</text>
+  <text x="576" y="412" fill="{FOG}" font-family="{SANS_STACK}" font-size="18" letter-spacing="2">DEFENSIVE UTILITIES FOR LINUX HOSTS</text>
   <path d="M576 446H1180" stroke="{LICHEN}" stroke-width="2"/>
 </svg>
 '''
