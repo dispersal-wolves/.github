@@ -43,6 +43,35 @@ def fit_mark(mark: Image.Image, canvas: Image.Image, box: tuple[int, int, int, i
     canvas.alpha_composite(solid, (x0 + (max_width - size[0]) // 2, y0 + (max_height - size[1]) // 2))
 
 
+# Georgia and Arial render the raster social preview. Search the usual
+# Windows, macOS and Linux locations; --serif-font and --sans-font override.
+SERIF_CANDIDATES = (
+    r"C:\Windows\Fonts\georgia.ttf",
+    "/System/Library/Fonts/Supplemental/Georgia.ttf",
+    "/Library/Fonts/Georgia.ttf",
+    "/usr/share/fonts/truetype/msttcorefonts/Georgia.ttf",
+    "/usr/share/fonts/msttcore/georgia.ttf",
+)
+SANS_CANDIDATES = (
+    r"C:\Windows\Fonts\arial.ttf",
+    "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "/Library/Fonts/Arial.ttf",
+    "/usr/share/fonts/truetype/msttcorefonts/Arial.ttf",
+    "/usr/share/fonts/msttcore/arial.ttf",
+)
+
+
+def find_font(override: Path | None, candidates: tuple[str, ...], name: str, flag: str) -> str:
+    if override is not None:
+        if not override.is_file():
+            raise SystemExit(f"{flag}: {override} does not exist")
+        return str(override)
+    for candidate in candidates:
+        if Path(candidate).is_file():
+            return candidate
+    raise SystemExit(f"{name} was not found. Install it or pass its .ttf path with {flag}.")
+
+
 def font(path: str, size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(path, size=size)
 
@@ -51,7 +80,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Trace a generated walking-wolf raster into reproducible brand assets.")
     parser.add_argument("input", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--serif-font", type=Path, help="Georgia .ttf used for the social preview PNG")
+    parser.add_argument("--sans-font", type=Path, help="Arial .ttf used for the social preview PNG")
     args = parser.parse_args()
+    serif_path = find_font(args.serif_font, SERIF_CANDIDATES, "Georgia", "--serif-font")
+    sans_path = find_font(args.sans_font, SANS_CANDIDATES, "Arial", "--sans-font")
 
     args.output.mkdir(parents=True, exist_ok=True)
     original = Image.open(args.input).convert("RGBA")
@@ -103,8 +136,6 @@ def main() -> None:
     draw = ImageDraw.Draw(social)
     draw.rectangle((0, 0, 16, 640), fill=ImageColor.getrgb(LICHEN))
     fit_mark(cropped, social, (64, 126, 508, 470), FOG)
-    serif_path = r"C:\Windows\Fonts\georgia.ttf"
-    sans_path = r"C:\Windows\Fonts\arial.ttf"
     draw.text((570, 188), "Dispersal", font=font(serif_path, 76), fill=ImageColor.getrgb(BONE))
     draw.text((570, 274), "Wolves", font=font(serif_path, 76), fill=ImageColor.getrgb(BONE))
     draw.text((576, 394), "DEFENSIVE UTILITIES FOR LINUX HOSTS", font=font(sans_path, 18), fill=ImageColor.getrgb(FOG), spacing=6)
