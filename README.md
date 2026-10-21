@@ -15,7 +15,7 @@ Clone the ten tool repositories as siblings of this `.github` repository, then r
 node tools/sync-banners.mjs --apply
 ```
 
-Without `--apply`, the command only regenerates `docs/banners/`. With it, each generated SVG is copied to `../<repository>/docs/banner.svg` for a normal versioned branding commit.
+Without `--apply`, the command regenerates `docs/field-banner.svg` and `docs/banners/`. With it, each repository banner is also copied to `../<repository>/docs/banner.svg` for a normal versioned branding commit. The command checks that every sibling clone has a `docs/` folder first and writes nothing if one is missing.
 
 ## Rebuild the walking-wolf trace
 
