@@ -25,4 +25,6 @@ The selected source artwork is kept at `docs/brand/wolf-source.png`. Rebuild the
 python tools/vectorize_wolf.py docs/brand/wolf-source.png docs/brand
 ```
 
+The social preview PNG is drawn with Georgia and Arial. The script looks for them in the usual Windows, macOS and Linux font folders; pass `--serif-font` and `--sans-font` with `.ttf` paths if they live elsewhere.
+
 Review the silhouette at its intended minimum size before replacing the canonical mark.
