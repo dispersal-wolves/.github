@@ -78,6 +78,12 @@ function fieldBanner() {
 </svg>\n`;
 }
 
+const targetFor = (slug) => path.resolve(root, '..', slug, 'docs', 'banner.svg');
+if (apply) {
+  const missing = services.map(([slug]) => slug).filter((slug) => !fs.existsSync(path.dirname(targetFor(slug))));
+  if (missing.length) throw new Error(`Sibling repositories not found, nothing was written: ${missing.join(', ')}`);
+}
+
 fs.mkdirSync(output, {recursive: true});
 fs.writeFileSync(path.join(root, 'docs', 'field-banner.svg'), fieldBanner(), 'utf8');
 console.log(`generated ${path.join(root, 'docs', 'field-banner.svg')}`);
@@ -87,8 +93,7 @@ for (const [slug, title, line] of services) {
   const generated = path.join(output, `${slug}.svg`);
   fs.writeFileSync(generated, svg, 'utf8');
   if (apply) {
-    const target = path.resolve(root, '..', slug, 'docs', 'banner.svg');
-    if (!fs.existsSync(path.dirname(target))) throw new Error(`Sibling repository not found: ${slug}`);
+    const target = targetFor(slug);
     fs.writeFileSync(target, svg, 'utf8');
     console.log(`updated ${target}`);
   } else {
